@@ -9,7 +9,7 @@ services:
     api:
         build:
             context: ./server
-        image: docker.io/appus006/complex_api
+        image: docker.io/kabhilasha/complex_api
         environment:
             - REDIS_HOST=redis
             - REDIS_PORT=6379
@@ -21,13 +21,13 @@ services:
     worker:
         build:
             context: ./worker
-        image: docker.io/appus006/complex_worker
+        image: docker.io/kabhilasha/complex_worker
         environment:
             - REDIS_HOST=redis
             - REDIS_PORT=6379
     client:
         build: ./client
-        image: docker.io/appus006/complex_client
+        image: docker.io/kabhilasha/complex_client
 
     nginx:
         depends_on:
